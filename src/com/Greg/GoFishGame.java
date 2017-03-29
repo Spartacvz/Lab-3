@@ -78,13 +78,13 @@ public class GoFishGame {
 
     private static void UserHand()  {
         // Create seven slots
-        int rando1 = (int) ((Math.random() % 52));
-        int rando2 = (int) ((Math.random() % 52));
-        int rando3 = (int) ((Math.random() % 52));
-        int rando4 = (int) ((Math.random() % 52));
-        int rando5 = (int) ((Math.random() % 52));
-        int rando6 = (int) ((Math.random() % 52));
-        int rando7 = (int) ((Math.random() % 52));
+        int rando1 = (int) ((Math.random() * deck.size()));
+        int rando2 = (int) ((Math.random() * deck.size()));
+        int rando3 = (int) ((Math.random() * deck.size()));
+        int rando4 = (int) ((Math.random() * deck.size()));
+        int rando5 = (int) ((Math.random() * deck.size()));
+        int rando6 = (int) ((Math.random() * deck.size()));
+        int rando7 = (int) ((Math.random() * deck.size()));
 
 
         Object card1 = deck.get(rando1);   // Pull a random card from deck
@@ -104,7 +104,6 @@ public class GoFishGame {
         System.out.println(card5);
         System.out.println(card6);
         System.out.println(card7);
-
 
         deck.remove(rando1);
         deck.remove(rando2);
