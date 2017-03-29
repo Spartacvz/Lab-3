@@ -6,9 +6,9 @@ import java.util.Scanner;
 public class GoFishGame {
 
     // Use deck to create a list of
-    static ArrayList deck = new ArrayList();
-    static ArrayList userHand = new ArrayList();
-    static ArrayList computerHand = new ArrayList();
+    static ArrayList<String> deck = new ArrayList<String>();
+    static ArrayList<String> userHand = new ArrayList<String>();
+    static ArrayList<String> computerHand = new ArrayList<String>();
     private static Scanner request = new Scanner(System.in);
 
 
@@ -30,6 +30,8 @@ public class GoFishGame {
 
     private static void ComputerHand()  {
 
+        
+        /// TODO change this method to work like UserHand() 
         // Create seven slots
         int rand1 = (int) ((Math.random() * deck.size()));
         int rand2 = (int) ((Math.random() * deck.size()));
@@ -65,19 +67,36 @@ public class GoFishGame {
         deck.remove(rand6);
         deck.remove(rand7);
 
-        computerHand.add(rand1);
-        computerHand.add(rand2);
-        computerHand.add(rand3);
-        computerHand.add(rand4);
-        computerHand.add(rand5);
-        computerHand.add(rand6);
-        computerHand.add(rand7);
+//        computerHand.add(rand1);
+//        computerHand.add(rand2);
+//        computerHand.add(rand3);
+//        computerHand.add(rand4);
+//        computerHand.add(rand5);
+//        computerHand.add(rand6);
+//        computerHand.add(rand7);
 
     }
 
 
     private static void UserHand()  {
+
+        for (int x = 0 ; x < 7 ; x++)  {
+
+            int random = (int) ((Math.random() * deck.size()));
+            String card1 = deck.get(random);   // Pull a random card from deck
+            //System.out.println(card1);
+            deck.remove(random);
+            userHand.add(card1);
+
+        }
+
+        System.out.println(userHand);
+
+
+
         // Create seven slots
+        /*
+        // Create random number
         int rando1 = (int) ((Math.random() * deck.size()));
         int rando2 = (int) ((Math.random() * deck.size()));
         int rando3 = (int) ((Math.random() * deck.size()));
@@ -87,6 +106,7 @@ public class GoFishGame {
         int rando7 = (int) ((Math.random() * deck.size()));
 
 
+        // draw a card from the deck
         Object card1 = deck.get(rando1);   // Pull a random card from deck
         Object card2 = deck.get(rando2);   // Pull a random card from deck
         Object card3 = deck.get(rando3);   // Pull a random card from deck
@@ -105,6 +125,7 @@ public class GoFishGame {
         System.out.println(card6);
         System.out.println(card7);
 
+        // remove items from the deck
         deck.remove(rando1);
         deck.remove(rando2);
         deck.remove(rando3);
@@ -113,6 +134,7 @@ public class GoFishGame {
         deck.remove(rando6);
         deck.remove(rando7);
 
+        // add card to user hand
         userHand.add(rando1);
         userHand.add(rando2);
         userHand.add(rando3);
@@ -120,6 +142,9 @@ public class GoFishGame {
         userHand.add(rando5);
         userHand.add(rando6);
         userHand.add(rando7);
+        */
+
+
     }
     private static void Deck() {
         // Add cards to deck
